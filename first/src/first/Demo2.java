@@ -1,0 +1,39 @@
+package first;
+
+class Parent{
+	int site=5;
+	String car="BMW";
+	int amount=5000;
+	
+	void Pdisplay() {
+		System.out.println("parent site: "+site);
+		System.out.println("parent car: "+car);
+		System.out.println("parent amount: "+amount);
+		
+	}
+}
+
+class Child extends Parent{
+	String car="Maruthi";
+	int amount=2000;
+	 void Cdisplay() {
+		 System.out.println("===================");
+		 System.out.println("parent site: "+site);
+		 System.out.println("child car: "+car);
+		 System.out.println("parent car: "+super.car);
+		 System.out.println("child amount: "+amount);
+		 System.out.println("Full amount: "+(amount+super.amount));
+	 }
+}
+public class Demo2 {
+
+	public static void main(String[] args) {
+		Parent p=new Parent();
+		p.Pdisplay();
+		
+		Child c=new Child();
+		c.Cdisplay();
+
+	}
+
+}

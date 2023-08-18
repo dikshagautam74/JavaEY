@@ -1,0 +1,31 @@
+//Constructor Overloading
+
+package Constructor;
+
+class A{
+	A(){
+		System.out.println("Default constructor");
+	}
+	A(int id,String name){
+		System.out.println("ID: "+ id);
+		System.out.println("Name: "+ name);
+	}
+	A(int age,int salary,String designation){
+		System.out.println("Age: "+ age);
+		System.out.println("salary: "+ salary);
+		System.out.println("Designation: "+ designation);
+	}
+}
+
+
+public class ConstructorOverloading {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A a=new A();
+		A a2=new A(23,"John");
+		A a3=new A(21,400000,"Developer");
+
+	}
+
+}

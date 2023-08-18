@@ -1,0 +1,22 @@
+package Constructor;
+
+class P{
+	void abc() {
+		System.out.println("P class abc method");
+	}
+}
+
+class Q{
+	void abc() {
+		System.out.println("Q class abc method");
+	}
+}
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		Q q=new Q();
+		q.abc();
+
+	}
+
+}

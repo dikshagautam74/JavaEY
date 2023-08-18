@@ -1,0 +1,245 @@
+package com;
+
+import java.util.Scanner;
+abstract class Emp
+{
+	Scanner sc= new Scanner(System.in);
+	int id,age;
+	String name;
+	int salary;
+	String desig;
+	Emp()
+	{
+		System.out.println("Enter ID :");
+		 id=sc.nextInt();
+		System.out.println("Enter name :");
+		 name= sc.next();
+		System.out.println("Enter Age :");
+		age=sc.nextInt();
+	}
+	void display()
+	{
+		System.out.println("=================");
+		System.out.println("ID :"+id);
+		System.out.println("Name :"+name);
+		System.out.println("Age :"+age);
+		System.out.println("Salary :"+salary);
+		System.out.println("Desig :"+desig);
+	}
+	
+	abstract void bonus();
+	abstract void hike();
+	abstract void pf();
+}													
+class Clerk extends Emp
+{
+	Clerk()
+	{	
+		 salary=20000;
+		desig="Clerk";
+	}	
+	void raiseSalary()
+	{
+		salary=salary+10000;
+	}
+	
+	@Override
+    void bonus() {
+        System.out.println("yes you got abonus of 50000 ");
+        salary=salary+5000;
+    }
+	
+	@Override
+	void hike() {
+		System.out.println("Hike of clerk");
+		salary+=(salary*0.05);
+	}
+	void pf() {
+		System.out.println("12% of salary");
+		salary+=(salary*0.12);
+	}
+}
+class Dev extends Emp
+{
+	Dev()
+	{
+		salary=30000;
+		desig="Developer";		
+	}
+	void raiseSalary()
+	{
+		salary=salary+20000;
+	}
+	void bonus() {
+		System.out.println("Bonus for Developer");
+		salary=salary+15000;
+	}
+	void hike() {
+		System.out.println("Hike of Developer");
+		salary+=(salary*0.15);
+	}
+	void pf() {
+		System.out.println("12% of salary");
+		salary+=(salary*0.12);
+	}
+}
+
+class Manager extends Emp
+{
+	
+	Manager()
+	{
+		salary=80000;
+		desig="Manager";	
+	}
+	void raiseSalary()
+	{
+		salary=salary+50000;
+	}
+	void bonus() {
+		System.out.println("Bonus for Manager");
+		salary=salary+25000;
+	}
+	void hike() {
+		System.out.println("Hike of Manager");
+		salary+=(salary*0.25);
+	}
+	void pf() {
+		System.out.println("12% of salary");
+		salary+=(salary*0.12);
+	}
+}
+class Tester extends Emp
+{
+	Tester(){
+		salary=40000;
+		desig="Tester";
+	}
+	void raiseSalary()
+	{
+		salary=salary+30000;
+	}
+	void bonus() {
+		System.out.println("Bonus for Tester");
+		salary=salary+10000;
+	}
+	void hike() {
+		System.out.println("Hike of Tester");
+		salary+=(salary*0.1);
+	}
+	void pf() {
+		System.out.println("12% of salary");
+		salary+=(salary*0.12);
+	}
+}
+public class Project {
+
+	public static void main(String[] args) {
+	
+		Scanner scn = new Scanner(System.in);
+        int ch = 0;
+        int ch2=0;
+        Clerk c = new Clerk();
+        Tester t = null;
+        Manager m = null;
+        Dev d = null;
+        c.bonus();
+       
+        
+       do {
+    	   System.out.println("1 - Create");
+           System.out.println("2 - Display");
+           System.out.println("3 - Update ");
+           System.out.println("4 - Exit");
+           ch = scn.nextInt();
+           
+           if(ch==1)
+           {
+        	   
+        	   	do {
+        	   		
+        	   		System.out.println("1 - Clerk");
+                    System.out.println("2 - Dev");
+                    System.out.println("3 - Tester");
+                    System.out.println("4 - Manager");
+                    System.out.println("5 - Exit");
+                    ch2 = scn.nextInt();
+                    
+                    
+                   if(ch2==1) {
+                	   c=new Clerk();
+                   }
+                   else if(ch2==2) {
+                	   d= new Dev();
+                   }
+                   else if(ch2==3) {
+                	   t= new Tester();
+                   }
+                   else if(ch2==4) {
+                	   m=new Manager();
+                   }
+                    
+                    
+        	   	}while(ch2<5);
+           }
+           else if(ch==2) {
+        	   do {
+       	   		System.out.println("1 - Clerk");
+                   System.out.println("2 - Dev");
+                   System.out.println("3 - Tester");
+                   System.out.println("4 - Manager");
+                   System.out.println("5 - Exit");
+                   ch2 = scn.nextInt();
+                   
+                   
+                  if(ch2==1) {
+               	   c.display();
+                  }
+                  else if(ch2==2) {
+               	   d.display();
+                  }
+                  else if(ch2==3) {
+               	   t.display();
+                  }
+                  else if(ch2==4) {
+               	   m.display();
+                  }       
+       	   	}while(ch2<5);
+
+           }
+           else if(ch==3) {
+        	   do {
+       	   		System.out.println("1 - Clerk");
+                   System.out.println("2 - Dev");
+                   System.out.println("3 - Tester");
+                   System.out.println("4 - Manager");
+                   System.out.println("5 - Exit");
+                   ch2 = scn.nextInt();
+                   
+                   
+                  if(ch2==1) {
+               	   c.raiseSalary();
+               	   System.out.println("Succesfully Salary Updated .....!");
+                  }
+                  else if(ch2==2) {
+               	   d.raiseSalary();
+               	System.out.println("Succesfully Salary Updated .....!");
+                  }
+                  else if(ch2==3) {
+               	   t.raiseSalary();
+               	System.out.println("Succesfully Salary Updated .....!");
+                  }
+                  else if(ch2==4) {
+               	   m.raiseSalary();
+               	System.out.println("Succesfully Salary Updated .....!");
+                  }       
+       	   	}while(ch2<5);
+
+           }
+           else if(ch==4) {
+        	   System.out.println(0);
+        	   System.out.println("Thank you.....!");
+           }
+       }while(ch<4);
+	}
+}

@@ -1,0 +1,37 @@
+package third;
+
+abstract class Bank{
+	Bank(){}
+	abstract void roi();
+	abstract void loan();
+//	void statement();
+}
+
+abstract class Abc extends Bank{
+	void roi() {
+		System.out.println("ROI");
+	}
+	void loan() {
+		System.out.println("LOAN");
+	}
+	abstract void onlineTransfer();
+}
+
+class Xyz extends Abc{
+	void onlineTransfer() {
+		System.out.println("Online Transfer");
+	}
+}
+public class Abstract1 {
+
+	public static void main(String[] args) {
+//		Bank b=new Bank();
+//		Abc a =new Abc();
+		Xyz x=new Xyz();
+		x.roi();
+		x.loan();
+		x.onlineTransfer();
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package sixth;
+
+import java.util.io.*;
+import java.util.Scanner;
+
+public class Exception1 {
+
+	public static void main(String[] args) FileNotFoundException {
+		m1();
+	}
+	static void m1() throws FileNotFoundException {
+		m2();
+		System.out.println("M1 class");
+	}
+	static void m2() FileNotFoundException {
+		m3();
+		System.out.println("M2 class");
+	}
+	static void m3() FileNotFoundException {
+		File f=new File("abc.txt");
+		FileReader fr=new FileReader();
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package sixth;
+
+import java.util.io.*;
+import java.util.Scanner;
+
+public class Exception1 {
+
+	public static void main(String[] args)  {
+		m1();
+	}
+	static void m1() {
+		m2();
+		System.out.println("M1 class");
+	}
+	static void m2() {
+		m3();
+		System.out.println("M2 class");
+	}
+	static void m3(){
+		File f=new File("abc.txt");
+		FileReader fr=new FileReader(f);
+
+	}
+
+}

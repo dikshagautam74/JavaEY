@@ -1,0 +1,20 @@
+package first;
+
+class Parent{
+	Parent(){
+		System.out.println("parent");
+	}
+}
+class Child extends Parent{
+	Child(){
+		System.out.println("child");
+	}
+}
+public class Demo3 {
+
+	public static void main(String[] args) {
+		Child c =new Child();
+		
+	}
+
+}
